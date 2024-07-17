@@ -5,6 +5,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
 {
@@ -164,5 +165,10 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		new FlxTimer().start(3, function(scoreTimer:FlxTimer)
+		{
+			FlxTween.tween(bar1.scale, {x: 1.5, y: 1}, 3);
+			bar1.updateHitbox();
+		});
 	}
 }
