@@ -83,6 +83,24 @@ class PlayState extends FlxState
 	var scorenum15:Int = 4;
 	var scorenum16:Int = 3;
 
+	// text of names
+	var name1 = new FlxText();
+	var name2 = new FlxText();
+	var name3 = new FlxText();
+	var name4 = new FlxText();
+	var name5 = new FlxText();
+	var name6 = new FlxText();
+	var name7 = new FlxText();
+	var name8 = new FlxText();
+	var name9 = new FlxText();
+	var name10 = new FlxText();
+	var name11 = new FlxText();
+	var name12 = new FlxText();
+	var name13 = new FlxText();
+	var name14 = new FlxText();
+	var name15 = new FlxText();
+	var name16 = new FlxText();
+
 	var barheightTotal:Int = 45; // height of bar (720) divided by total one bar (change if number of athletes is not 16)
 	
 	override public function create()
@@ -131,7 +149,7 @@ class PlayState extends FlxState
 		bar13 = new FlxSprite(100, barheightTotal * 12).makeGraphic(1, 40, 0xFF808000);
 		add(bar13);
 
-		bar14 = new FlxSprite(100, barheightTotal * 13).makeGraphic(1, 40, FlxColor.PINK);
+		bar14 = new FlxSprite(100, barheightTotal * 13).makeGraphic(1, 40, 0xFFFF80FF);
 		add(bar14);
 
 		bar15 = new FlxSprite(100, barheightTotal * 14).makeGraphic(1, 40, 0xFF00FFFF);
@@ -139,7 +157,7 @@ class PlayState extends FlxState
 
 		bar16 = new FlxSprite(100, barheightTotal * 15).makeGraphic(1, 40, 0xFF006400);
 		add(bar16);
-		barPlacementText1 = new FlxText(25, 0, 0, '1st', 32);
+		barPlacementText1 = new FlxText(25, barheightTotal * 0, 0, '1st', 32);
 		barPlacementText1.setFormat("Times New Roman", 32);
 		add(barPlacementText1);
 
@@ -202,13 +220,77 @@ class PlayState extends FlxState
 		barPlacementText16 = new FlxText(25, barheightTotal * 15, 0, '16th', 32);
 		barPlacementText16.setFormat("Times New Roman", 32);
 		add(barPlacementText16);
+		// names
+		name1 = new FlxText(100, barheightTotal * 0, 0, 'Magenta', 32);
+		name1.setFormat("Times New Roman", 32, FlxColor.MAGENTA);
+		add(name1);
+
+		name2 = new FlxText(100, barheightTotal * 1, 0, 'Purple', 32);
+		name2.setFormat("Times New Roman", 32, FlxColor.PURPLE);
+		add(name2);
+
+		name3 = new FlxText(100, barheightTotal * 2, 0, 'Tan', 32);
+		name3.setFormat("Times New Roman", 32, 0xFFD2B48C);
+		add(name3);
+
+		name4 = new FlxText(100, barheightTotal * 3, 0, 'Orange', 32);
+		name4.setFormat("Times New Roman", 32, FlxColor.ORANGE);
+		add(name4);
+
+		name5 = new FlxText(100, barheightTotal * 4, 0, 'Lime', 32);
+		name5.setFormat("Times New Roman", 32, FlxColor.LIME);
+		add(name5);
+
+		name6 = new FlxText(100, barheightTotal * 5, 0, 'Red', 32);
+		name6.setFormat("Times New Roman", 32, FlxColor.RED);
+		add(name6);
+
+		name7 = new FlxText(100, barheightTotal * 6, 0, 'Blue', 32);
+		name7.setFormat("Times New Roman", 32, FlxColor.BLUE);
+		add(name7);
+
+		name8 = new FlxText(100, barheightTotal * 7, 0, 'Lavender', 32);
+		name8.setFormat("Times New Roman", 32, 0xFFC080FF);
+		add(name8);
+
+		name9 = new FlxText(100, barheightTotal * 8, 0, 'Yellow', 32);
+		name9.setFormat("Times New Roman", 32, FlxColor.YELLOW);
+		add(name9);
+
+		name10 = new FlxText(100, barheightTotal * 9, 0, 'Brown', 32);
+		name10.setFormat("Times New Roman", 32, FlxColor.BROWN);
+		add(name10);
+
+		name11 = new FlxText(100, barheightTotal * 10, 0, 'Gray', 32);
+		name11.setFormat("Times New Roman", 32, 0xFF646464);
+		add(name11);
+
+		name12 = new FlxText(100, barheightTotal * 11, 0, 'Navy', 32);
+		name12.setFormat("Times New Roman", 32, 0xFF000080);
+		add(name12);
+
+		name13 = new FlxText(100, barheightTotal * 12, 0, 'Olive', 32);
+		name13.setFormat("Times New Roman", 32, 0xFF808000);
+		add(name13);
+
+		name14 = new FlxText(100, barheightTotal * 13, 0, 'Pink', 32);
+		name14.setFormat("Times New Roman", 32, 0xFFFF80FF);
+		add(name14);
+
+		name15 = new FlxText(100, barheightTotal * 14, 0, 'Cyan', 32);
+		name15.setFormat("Times New Roman", 32, 0xFF00FFFF);
+		add(name15);
+
+		name16 = new FlxText(100, barheightTotal * 15, 0, 'Green', 32);
+		name16.setFormat("Times New Roman", 32, 0xFF008000);
+		add(name16);
 		// scores (this is a fucking mess lol)
 		score1 = new FlxText(80, barheightTotal * 0, 0, '0', 32);
 		score1.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer1:FlxTimer)
 		{
-			FlxTween.num(0, scorenum1, 3, {}, updateValue1);
-			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 0}, 3);
+			FlxTween.num(0, scorenum1, 5, {}, updateValue1);
+			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 0}, 5);
 		});
 		add(score1);
 		// score seperator
@@ -216,8 +298,8 @@ class PlayState extends FlxState
 		score2.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer2:FlxTimer)
 		{
-			FlxTween.num(0, scorenum2, 3, {}, updateValue2);
-			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 1}, 3);
+			FlxTween.num(0, scorenum2, 5, {}, updateValue2);
+			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 1}, 5);
 		});
 		add(score2);
 		// score seperator
@@ -225,8 +307,8 @@ class PlayState extends FlxState
 		score3.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer3:FlxTimer)
 		{
-			FlxTween.num(0, scorenum3, 3, {}, updateValue3);
-			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 2}, 3);
+			FlxTween.num(0, scorenum3, 5, {}, updateValue3);
+			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 2}, 5);
 		});
 		add(score3);
 		// score seperator
@@ -234,8 +316,8 @@ class PlayState extends FlxState
 		score4.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer4:FlxTimer)
 		{
-			FlxTween.num(0, scorenum4, 3, {}, updateValue4);
-			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 3}, 3);
+			FlxTween.num(0, scorenum4, 5, {}, updateValue4);
+			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 3}, 5);
 		});
 		add(score4);
 		// score seperator
@@ -243,8 +325,8 @@ class PlayState extends FlxState
 		score5.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer5:FlxTimer)
 		{
-			FlxTween.num(0, scorenum5, 3, {}, updateValue5);
-			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 4}, 3);
+			FlxTween.num(0, scorenum5, 5, {}, updateValue5);
+			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 4}, 5);
 		});
 		add(score5);
 		// score seperator
@@ -252,8 +334,8 @@ class PlayState extends FlxState
 		score6.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer6:FlxTimer)
 		{
-			FlxTween.num(0, scorenum6, 3, {}, updateValue6);
-			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 5}, 3);
+			FlxTween.num(0, scorenum6, 5, {}, updateValue6);
+			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 5}, 5);
 		});
 		add(score6);
 		// score seperator
@@ -261,8 +343,8 @@ class PlayState extends FlxState
 		score7.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer7:FlxTimer)
 		{
-			FlxTween.num(0, scorenum7, 3, {}, updateValue7);
-			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 6}, 3);
+			FlxTween.num(0, scorenum7, 5, {}, updateValue7);
+			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 6}, 5);
 		});
 		add(score7);
 		// score seperator
@@ -270,8 +352,8 @@ class PlayState extends FlxState
 		score8.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer8:FlxTimer)
 		{
-			FlxTween.num(0, scorenum8, 3, {}, updateValue8);
-			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 7}, 3);
+			FlxTween.num(0, scorenum8, 5, {}, updateValue8);
+			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 7}, 5);
 		});
 		add(score8);
 		// score seperator
@@ -279,8 +361,8 @@ class PlayState extends FlxState
 		score9.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer9:FlxTimer)
 		{
-			FlxTween.num(0, scorenum9, 3, {}, updateValue9);
-			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 8}, 3);
+			FlxTween.num(0, scorenum9, 5, {}, updateValue9);
+			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 8}, 5);
 		});
 		add(score9);
 		// score seperator
@@ -288,8 +370,8 @@ class PlayState extends FlxState
 		score10.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer10:FlxTimer)
 		{
-			FlxTween.num(0, scorenum10, 3, {}, updateValue10);
-			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 9}, 3);
+			FlxTween.num(0, scorenum10, 5, {}, updateValue10);
+			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 9}, 5);
 		});
 		add(score10);
 		// score seperator
@@ -297,8 +379,8 @@ class PlayState extends FlxState
 		score11.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer11:FlxTimer)
 		{
-			FlxTween.num(0, scorenum11, 3, {}, updateValue11);
-			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 10}, 3);
+			FlxTween.num(0, scorenum11, 5, {}, updateValue11);
+			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 10}, 5);
 		});
 		add(score11);
 		// score seperator
@@ -306,8 +388,8 @@ class PlayState extends FlxState
 		score12.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer12:FlxTimer)
 		{
-			FlxTween.num(0, scorenum12, 3, {}, updateValue12);
-			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 11}, 3);
+			FlxTween.num(0, scorenum12, 5, {}, updateValue12);
+			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 11}, 5);
 		});
 		add(score12);
 		// score seperator
@@ -315,8 +397,8 @@ class PlayState extends FlxState
 		score13.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer13:FlxTimer)
 		{
-			FlxTween.num(0, scorenum13, 3, {}, updateValue13);
-			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 12}, 3);
+			FlxTween.num(0, scorenum13, 5, {}, updateValue13);
+			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 12}, 5);
 		});
 		add(score13);
 		// score seperator
@@ -324,8 +406,8 @@ class PlayState extends FlxState
 		score14.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer14:FlxTimer)
 		{
-			FlxTween.num(0, scorenum14, 3, {}, updateValue14);
-			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 13}, 3);
+			FlxTween.num(0, scorenum14, 5, {}, updateValue14);
+			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 13}, 5);
 		});
 		add(score14);
 		// score seperator
@@ -333,8 +415,8 @@ class PlayState extends FlxState
 		score15.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer15:FlxTimer)
 		{
-			FlxTween.num(0, scorenum15, 3, {}, updateValue15);
-			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 14}, 3);
+			FlxTween.num(0, scorenum15, 5, {}, updateValue15);
+			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 14}, 5);
 		});
 		add(score15);
 		// score seperator
@@ -342,8 +424,8 @@ class PlayState extends FlxState
 		score16.setFormat("Times New Roman", 32, FlxColor.BLACK);
 		new FlxTimer().start(3, function(scoreTimer16:FlxTimer)
 		{
-			FlxTween.num(0, scorenum16, 3, {}, updateValue16);
-			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 15}, 3);
+			FlxTween.num(0, scorenum16, 5, {}, updateValue16);
+			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 15}, 5);
 		});
 		add(score16);
 		// score seperator
@@ -354,38 +436,54 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		new FlxTimer().start(3, function(scoreTimer:FlxTimer)
 		{
-			FlxTween.tween(bar1.scale, {x: scorenum1 * 10, y: 1}, 3);
+			FlxTween.tween(bar1.scale, {x: scorenum1 * 10, y: 1}, 2.5);
 			bar1.updateHitbox();
-			FlxTween.tween(bar2.scale, {x: scorenum2 * 10, y: 1}, 3);
+			FlxTween.tween(bar2.scale, {x: scorenum2 * 10, y: 1}, 2.5);
 			bar2.updateHitbox();
-			FlxTween.tween(bar3.scale, {x: scorenum3 * 10, y: 1}, 3);
+			FlxTween.tween(bar3.scale, {x: scorenum3 * 10, y: 1}, 2.5);
 			bar3.updateHitbox();
-			FlxTween.tween(bar4.scale, {x: scorenum4 * 10, y: 1}, 3);
+			FlxTween.tween(bar4.scale, {x: scorenum4 * 10, y: 1}, 2.5);
 			bar4.updateHitbox();
-			FlxTween.tween(bar5.scale, {x: scorenum5 * 10, y: 1}, 3);
+			FlxTween.tween(bar5.scale, {x: scorenum5 * 10, y: 1}, 2.5);
 			bar5.updateHitbox();
-			FlxTween.tween(bar6.scale, {x: scorenum6 * 10, y: 1}, 3);
+			FlxTween.tween(bar6.scale, {x: scorenum6 * 10, y: 1}, 2.5);
 			bar6.updateHitbox();
-			FlxTween.tween(bar7.scale, {x: scorenum7 * 10, y: 1}, 3);
+			FlxTween.tween(bar7.scale, {x: scorenum7 * 10, y: 1}, 2.5);
 			bar7.updateHitbox();
-			FlxTween.tween(bar8.scale, {x: scorenum8 * 10, y: 1}, 3);
+			FlxTween.tween(bar8.scale, {x: scorenum8 * 10, y: 1}, 2.5);
 			bar8.updateHitbox();
-			FlxTween.tween(bar9.scale, {x: scorenum9 * 10, y: 1}, 3);
+			FlxTween.tween(bar9.scale, {x: scorenum9 * 10, y: 1}, 2.5);
 			bar9.updateHitbox();
-			FlxTween.tween(bar10.scale, {x: scorenum10 * 10, y: 1}, 3);
+			FlxTween.tween(bar10.scale, {x: scorenum10 * 10, y: 1}, 2.5);
 			bar10.updateHitbox();
-			FlxTween.tween(bar11.scale, {x: scorenum11 * 10, y: 1}, 3);
+			FlxTween.tween(bar11.scale, {x: scorenum11 * 10, y: 1}, 2.5);
 			bar11.updateHitbox();
-			FlxTween.tween(bar12.scale, {x: scorenum12 * 10, y: 1}, 3);
+			FlxTween.tween(bar12.scale, {x: scorenum12 * 10, y: 1}, 2.5);
 			bar12.updateHitbox();
-			FlxTween.tween(bar13.scale, {x: scorenum13 * 10, y: 1}, 3);
+			FlxTween.tween(bar13.scale, {x: scorenum13 * 10, y: 1}, 2.5);
 			bar13.updateHitbox();
-			FlxTween.tween(bar14.scale, {x: scorenum14 * 10, y: 1}, 3);
+			FlxTween.tween(bar14.scale, {x: scorenum14 * 10, y: 1}, 2.5);
 			bar14.updateHitbox();
-			FlxTween.tween(bar15.scale, {x: scorenum15 * 10, y: 1}, 3);
+			FlxTween.tween(bar15.scale, {x: scorenum15 * 10, y: 1}, 2.5);
 			bar15.updateHitbox();
-			FlxTween.tween(bar16.scale, {x: scorenum16 * 10, y: 1}, 3);
+			FlxTween.tween(bar16.scale, {x: scorenum16 * 10, y: 1}, 2.5);
 			bar16.updateHitbox();
+			FlxTween.tween(name1, {x: 100 + (scorenum1 * 10), y: barheightTotal * 0}, 2.5);
+			FlxTween.tween(name2, {x: 100 + (scorenum2 * 10), y: barheightTotal * 1}, 2.5);
+			FlxTween.tween(name3, {x: 100 + (scorenum3 * 10), y: barheightTotal * 2}, 2.5);
+			FlxTween.tween(name4, {x: 100 + (scorenum4 * 10), y: barheightTotal * 3}, 2.5);
+			FlxTween.tween(name5, {x: 100 + (scorenum5 * 10), y: barheightTotal * 4}, 2.5);
+			FlxTween.tween(name6, {x: 100 + (scorenum6 * 10), y: barheightTotal * 5}, 2.5);
+			FlxTween.tween(name7, {x: 100 + (scorenum7 * 10), y: barheightTotal * 6}, 2.5);
+			FlxTween.tween(name8, {x: 100 + (scorenum8 * 10), y: barheightTotal * 7}, 2.5);
+			FlxTween.tween(name9, {x: 100 + (scorenum9 * 10), y: barheightTotal * 8}, 2.5);
+			FlxTween.tween(name10, {x: 100 + (scorenum10 * 10), y: barheightTotal * 9}, 2.5);
+			FlxTween.tween(name11, {x: 100 + (scorenum11 * 10), y: barheightTotal * 10}, 2.5);
+			FlxTween.tween(name12, {x: 100 + (scorenum12 * 10), y: barheightTotal * 11}, 2.5);
+			FlxTween.tween(name13, {x: 100 + (scorenum13 * 10), y: barheightTotal * 12}, 2.5);
+			FlxTween.tween(name14, {x: 100 + (scorenum14 * 10), y: barheightTotal * 13}, 2.5);
+			FlxTween.tween(name15, {x: 100 + (scorenum15 * 10), y: barheightTotal * 14}, 2.5);
+			FlxTween.tween(name16, {x: 100 + (scorenum16 * 10), y: barheightTotal * 15}, 2.5);
 		});
 	}
 	private function updateValue1(value1:Float):Void
