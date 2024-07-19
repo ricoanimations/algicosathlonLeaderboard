@@ -11,7 +11,9 @@ import flixel.util.FlxTimer;
 
 class PlayState extends FlxState
 {
+	// gray bar to show placement
 	var barPlacement = new FlxSprite();
+	// score bars
 	var bar1 = new FlxSprite();
 	var bar2 = new FlxSprite();
 	var bar3 = new FlxSprite();
@@ -28,6 +30,7 @@ class PlayState extends FlxState
 	var bar14 = new FlxSprite();
 	var bar15 = new FlxSprite();
 	var bar16 = new FlxSprite();
+	// placement number texts
 	var barPlacementText1 = new FlxText();
 	var barPlacementText2 = new FlxText();
 	var barPlacementText3 = new FlxText();
@@ -44,6 +47,7 @@ class PlayState extends FlxState
 	var barPlacementText14 = new FlxText();
 	var barPlacementText15 = new FlxText();
 	var barPlacementText16 = new FlxText();
+	// score number texts
 	var score1 = new FlxText();
 	var score2 = new FlxText();
 	var score3 = new FlxText();
@@ -61,8 +65,26 @@ class PlayState extends FlxState
 	var score15 = new FlxText();
 	var score16 = new FlxText();
 
-	var barheightTotal:Int = 45;
+	// make sure to multiply by ten when scaling
+	var scorenum1:Int = 12;
+	var scorenum2:Int = 2;
+	var scorenum3:Int = 1;
+	var scorenum4:Int = 70;
+	var scorenum5:Int = 40;
+	var scorenum6:Int = 20;
+	var scorenum7:Int = 25;
+	var scorenum8:Int = 30;
+	var scorenum9:Int = 100;
+	var scorenum10:Int = 50;
+	var scorenum11:Int = 6;
+	var scorenum12:Int = 8;
+	var scorenum13:Int = 15;
+	var scorenum14:Int = 10;
+	var scorenum15:Int = 4;
+	var scorenum16:Int = 3;
 
+	var barheightTotal:Int = 45; // height of bar (720) divided by total one bar (change if number of athletes is not 16)
+	
 	override public function create()
 	{
 		super.create();
@@ -73,7 +95,7 @@ class PlayState extends FlxState
 		bar1 = new FlxSprite(100, barheightTotal * 0).makeGraphic(1, 40, FlxColor.MAGENTA);
 		add(bar1);
 
-		bar2 = new FlxSprite(100, barheightTotal * 1).makeGraphic(1, 40, 0xFF8000FF);
+		bar2 = new FlxSprite(100, barheightTotal * 1).makeGraphic(1, 40, FlxColor.PURPLE);
 		add(bar2);
 
 		bar3 = new FlxSprite(100, barheightTotal * 2).makeGraphic(1, 40, 0xFFD2B48C);
@@ -180,14 +202,151 @@ class PlayState extends FlxState
 		barPlacementText16 = new FlxText(25, barheightTotal * 15, 0, '16th', 32);
 		barPlacementText16.setFormat("Times New Roman", 32);
 		add(barPlacementText16);
+		// scores (this is a fucking mess lol)
 		score1 = new FlxText(80, barheightTotal * 0, 0, '0', 32);
-		score1.setFormat("Times New Roman", 32, FlxColor.BLACK, RIGHT);
-		new FlxTimer().start(3, function(scoreTimer:FlxTimer)
+		score1.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer1:FlxTimer)
 		{
-			FlxTween.num(0, 12, 3, {}, updateValue);
-			FlxTween.tween(score1, {x: 150, y: 0}, 3);
+			FlxTween.num(0, scorenum1, 3, {}, updateValue1);
+			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 0}, 3);
 		});
 		add(score1);
+		// score seperator
+		score2 = new FlxText(80, barheightTotal * 1, 0, '0', 32);
+		score2.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer2:FlxTimer)
+		{
+			FlxTween.num(0, scorenum2, 3, {}, updateValue2);
+			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 1}, 3);
+		});
+		add(score2);
+		// score seperator
+		score3 = new FlxText(80, barheightTotal * 2, 0, '0', 32);
+		score3.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer3:FlxTimer)
+		{
+			FlxTween.num(0, scorenum3, 3, {}, updateValue3);
+			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 2}, 3);
+		});
+		add(score3);
+		// score seperator
+		score4 = new FlxText(80, barheightTotal * 3, 0, '0', 32);
+		score4.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer4:FlxTimer)
+		{
+			FlxTween.num(0, scorenum4, 3, {}, updateValue4);
+			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 3}, 3);
+		});
+		add(score4);
+		// score seperator
+		score5 = new FlxText(80, barheightTotal * 4, 0, '0', 32);
+		score5.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer5:FlxTimer)
+		{
+			FlxTween.num(0, scorenum5, 3, {}, updateValue5);
+			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 4}, 3);
+		});
+		add(score5);
+		// score seperator
+		score6 = new FlxText(80, barheightTotal * 5, 0, '0', 32);
+		score6.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer6:FlxTimer)
+		{
+			FlxTween.num(0, scorenum6, 3, {}, updateValue6);
+			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 5}, 3);
+		});
+		add(score6);
+		// score seperator
+		score7 = new FlxText(80, barheightTotal * 6, 0, '0', 32);
+		score7.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer7:FlxTimer)
+		{
+			FlxTween.num(0, scorenum7, 3, {}, updateValue7);
+			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 6}, 3);
+		});
+		add(score7);
+		// score seperator
+		score8 = new FlxText(80, barheightTotal * 7, 0, '0', 32);
+		score8.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer8:FlxTimer)
+		{
+			FlxTween.num(0, scorenum8, 3, {}, updateValue8);
+			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 7}, 3);
+		});
+		add(score8);
+		// score seperator
+		score9 = new FlxText(80, barheightTotal * 8, 0, '0', 32);
+		score9.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer9:FlxTimer)
+		{
+			FlxTween.num(0, scorenum9, 3, {}, updateValue9);
+			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 8}, 3);
+		});
+		add(score9);
+		// score seperator
+		score10 = new FlxText(80, barheightTotal * 9, 0, '0', 32);
+		score10.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer10:FlxTimer)
+		{
+			FlxTween.num(0, scorenum10, 3, {}, updateValue10);
+			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 9}, 3);
+		});
+		add(score10);
+		// score seperator
+		score11 = new FlxText(80, barheightTotal * 10, 0, '0', 32);
+		score11.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer11:FlxTimer)
+		{
+			FlxTween.num(0, scorenum11, 3, {}, updateValue11);
+			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 10}, 3);
+		});
+		add(score11);
+		// score seperator
+		score12 = new FlxText(80, barheightTotal * 11, 0, '0', 32);
+		score12.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer12:FlxTimer)
+		{
+			FlxTween.num(0, scorenum12, 3, {}, updateValue12);
+			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 11}, 3);
+		});
+		add(score12);
+		// score seperator
+		score13 = new FlxText(80, barheightTotal * 12, 0, '0', 32);
+		score13.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer13:FlxTimer)
+		{
+			FlxTween.num(0, scorenum13, 3, {}, updateValue13);
+			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 12}, 3);
+		});
+		add(score13);
+		// score seperator
+		score14 = new FlxText(80, barheightTotal * 13, 0, '0', 32);
+		score14.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer14:FlxTimer)
+		{
+			FlxTween.num(0, scorenum14, 3, {}, updateValue14);
+			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 13}, 3);
+		});
+		add(score14);
+		// score seperator
+		score15 = new FlxText(80, barheightTotal * 14, 0, '0', 32);
+		score15.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer15:FlxTimer)
+		{
+			FlxTween.num(0, scorenum15, 3, {}, updateValue15);
+			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 14}, 3);
+		});
+		add(score15);
+		// score seperator
+		score16 = new FlxText(80, barheightTotal * 15, 0, '0', 32);
+		score16.setFormat("Times New Roman", 32, FlxColor.BLACK);
+		new FlxTimer().start(3, function(scoreTimer16:FlxTimer)
+		{
+			FlxTween.num(0, scorenum16, 3, {}, updateValue16);
+			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 15}, 3);
+		});
+		add(score16);
+		// score seperator
 	}
 
 	override public function update(elapsed:Float)
@@ -195,42 +354,117 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		new FlxTimer().start(3, function(scoreTimer:FlxTimer)
 		{
-			FlxTween.tween(bar1.scale, {x: 120, y: 1}, 3);
+			FlxTween.tween(bar1.scale, {x: scorenum1 * 10, y: 1}, 3);
 			bar1.updateHitbox();
-			FlxTween.tween(bar2.scale, {x: 20, y: 1}, 3);
+			FlxTween.tween(bar2.scale, {x: scorenum2 * 10, y: 1}, 3);
 			bar2.updateHitbox();
-			FlxTween.tween(bar3.scale, {x: 10, y: 1}, 3);
+			FlxTween.tween(bar3.scale, {x: scorenum3 * 10, y: 1}, 3);
 			bar3.updateHitbox();
-			FlxTween.tween(bar4.scale, {x: 700, y: 1}, 3);
+			FlxTween.tween(bar4.scale, {x: scorenum4 * 10, y: 1}, 3);
 			bar4.updateHitbox();
-			FlxTween.tween(bar5.scale, {x: 400, y: 1}, 3);
+			FlxTween.tween(bar5.scale, {x: scorenum5 * 10, y: 1}, 3);
 			bar5.updateHitbox();
-			FlxTween.tween(bar6.scale, {x: 200, y: 1}, 3);
+			FlxTween.tween(bar6.scale, {x: scorenum6 * 10, y: 1}, 3);
 			bar6.updateHitbox();
-			FlxTween.tween(bar7.scale, {x: 250, y: 1}, 3);
+			FlxTween.tween(bar7.scale, {x: scorenum7 * 10, y: 1}, 3);
 			bar7.updateHitbox();
-			FlxTween.tween(bar8.scale, {x: 300, y: 1}, 3);
+			FlxTween.tween(bar8.scale, {x: scorenum8 * 10, y: 1}, 3);
 			bar8.updateHitbox();
-			FlxTween.tween(bar9.scale, {x: 1000, y: 1}, 3);
+			FlxTween.tween(bar9.scale, {x: scorenum9 * 10, y: 1}, 3);
 			bar9.updateHitbox();
-			FlxTween.tween(bar10.scale, {x: 500, y: 1}, 3);
+			FlxTween.tween(bar10.scale, {x: scorenum10 * 10, y: 1}, 3);
 			bar10.updateHitbox();
-			FlxTween.tween(bar11.scale, {x: 60, y: 1}, 3);
+			FlxTween.tween(bar11.scale, {x: scorenum11 * 10, y: 1}, 3);
 			bar11.updateHitbox();
-			FlxTween.tween(bar12.scale, {x: 80, y: 1}, 3);
+			FlxTween.tween(bar12.scale, {x: scorenum12 * 10, y: 1}, 3);
 			bar12.updateHitbox();
-			FlxTween.tween(bar13.scale, {x: 150, y: 1}, 3);
+			FlxTween.tween(bar13.scale, {x: scorenum13 * 10, y: 1}, 3);
 			bar13.updateHitbox();
-			FlxTween.tween(bar14.scale, {x: 100, y: 1}, 3);
+			FlxTween.tween(bar14.scale, {x: scorenum14 * 10, y: 1}, 3);
 			bar14.updateHitbox();
-			FlxTween.tween(bar15.scale, {x: 40, y: 1}, 3);
+			FlxTween.tween(bar15.scale, {x: scorenum15 * 10, y: 1}, 3);
 			bar15.updateHitbox();
-			FlxTween.tween(bar16.scale, {x: 30, y: 1}, 3);
+			FlxTween.tween(bar16.scale, {x: scorenum16 * 10, y: 1}, 3);
 			bar16.updateHitbox();
 		});
 	}
-	private function updateValue(value:Float):Void
+	private function updateValue1(value1:Float):Void
 	{
-		score1.text = Std.string(Std.int(value));
+		score1.text = Std.string(Std.int(value1));
+	}
+
+	private function updateValue2(value2:Float):Void
+	{
+		score2.text = Std.string(Std.int(value2));
+	}
+
+	private function updateValue3(value3:Float):Void
+	{
+		score3.text = Std.string(Std.int(value3));
+	}
+
+	private function updateValue4(value4:Float):Void
+	{
+		score4.text = Std.string(Std.int(value4));
+	}
+
+	private function updateValue5(value5:Float):Void
+	{
+		score5.text = Std.string(Std.int(value5));
+	}
+
+	private function updateValue6(value6:Float):Void
+	{
+		score6.text = Std.string(Std.int(value6));
+	}
+
+	private function updateValue7(value7:Float):Void
+	{
+		score7.text = Std.string(Std.int(value7));
+	}
+
+	private function updateValue8(value8:Float):Void
+	{
+		score8.text = Std.string(Std.int(value8));
+	}
+
+	private function updateValue9(value9:Float):Void
+	{
+		score9.text = Std.string(Std.int(value9));
+	}
+
+	private function updateValue10(value10:Float):Void
+	{
+		score10.text = Std.string(Std.int(value10));
+	}
+
+	private function updateValue11(value11:Float):Void
+	{
+		score11.text = Std.string(Std.int(value11));
+	}
+
+	private function updateValue12(value12:Float):Void
+	{
+		score12.text = Std.string(Std.int(value12));
+	}
+
+	private function updateValue13(value13:Float):Void
+	{
+		score13.text = Std.string(Std.int(value13));
+	}
+
+	private function updateValue14(value14:Float):Void
+	{
+		score14.text = Std.string(Std.int(value14));
+	}
+
+	private function updateValue15(value15:Float):Void
+	{
+		score15.text = Std.string(Std.int(value15));
+	}
+
+	private function updateValue16(value16:Float):Void
+	{
+		score16.text = Std.string(Std.int(value16));
 	}
 }
