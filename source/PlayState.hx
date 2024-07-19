@@ -101,8 +101,10 @@ class PlayState extends FlxState
 	var name15 = new FlxText();
 	var name16 = new FlxText();
 
+	// other stuff
 	var barheightTotal:Int = 45; // height of bar (720) divided by total one bar (change if number of athletes is not 16)
-	
+	var eliminated = new FlxText();
+
 	override public function create()
 	{
 		super.create();
@@ -429,6 +431,12 @@ class PlayState extends FlxState
 		});
 		add(score16);
 		// score seperator
+		new FlxTimer().start(12.5, function(eliminationTimer:FlxTimer)
+		{
+			eliminated = new FlxText(150, barheightTotal * 15, 0, 'ELIMINATED', 32);
+			eliminated.setFormat("Impact", 32, FlxColor.RED);
+			add(eliminated);
+		});
 	}
 
 	override public function update(elapsed:Float)
@@ -484,6 +492,57 @@ class PlayState extends FlxState
 			FlxTween.tween(name14, {x: 100 + (scorenum14 * 10), y: barheightTotal * 13}, 2.5);
 			FlxTween.tween(name15, {x: 100 + (scorenum15 * 10), y: barheightTotal * 14}, 2.5);
 			FlxTween.tween(name16, {x: 100 + (scorenum16 * 10), y: barheightTotal * 15}, 2.5);
+		});
+		new FlxTimer().start(8.5, function(placementTimer:FlxTimer)
+		{
+			FlxTween.tween(bar1, {x: 100, y: barheightTotal * 8}, 2);
+			FlxTween.tween(name1, {x: 100 + (scorenum1 * 10), y: barheightTotal * 8}, 2);
+			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 8}, 2);
+			FlxTween.tween(bar2, {x: 100, y: barheightTotal * 14}, 2);
+			FlxTween.tween(name2, {x: 100 + (scorenum2 * 10), y: barheightTotal * 14}, 2);
+			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 14}, 2);
+			FlxTween.tween(bar3, {x: 100, y: barheightTotal * 15}, 2);
+			FlxTween.tween(name3, {x: 100 + (scorenum3 * 10), y: barheightTotal * 15}, 2);
+			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 15}, 2);
+			FlxTween.tween(bar4, {x: 100, y: barheightTotal * 1}, 2);
+			FlxTween.tween(name4, {x: 100 + (scorenum4 * 10), y: barheightTotal * 1}, 2);
+			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 1}, 2);
+			FlxTween.tween(bar5, {x: 100, y: barheightTotal * 3}, 2);
+			FlxTween.tween(name5, {x: 100 + (scorenum5 * 10), y: barheightTotal * 3}, 2);
+			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 3}, 2);
+			FlxTween.tween(bar6, {x: 100, y: barheightTotal * 6}, 2);
+			FlxTween.tween(name6, {x: 100 + (scorenum6 * 10), y: barheightTotal * 6}, 2);
+			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 6}, 2);
+			FlxTween.tween(bar7, {x: 100, y: barheightTotal * 5}, 2);
+			FlxTween.tween(name7, {x: 100 + (scorenum7 * 10), y: barheightTotal * 5}, 2);
+			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 5}, 2);
+			FlxTween.tween(bar8, {x: 100, y: barheightTotal * 4}, 2);
+			FlxTween.tween(name8, {x: 100 + (scorenum8 * 10), y: barheightTotal * 4}, 2);
+			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 4}, 2);
+			FlxTween.tween(bar9, {x: 100, y: barheightTotal * 0}, 2);
+			FlxTween.tween(name9, {x: 100 + (scorenum9 * 10), y: barheightTotal * 0}, 2);
+			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 0}, 2);
+			FlxTween.tween(bar10, {x: 100, y: barheightTotal * 2}, 2);
+			FlxTween.tween(name10, {x: 100 + (scorenum10 * 10), y: barheightTotal * 2}, 2);
+			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 2}, 2);
+			FlxTween.tween(bar11, {x: 100, y: barheightTotal * 11}, 2);
+			FlxTween.tween(name11, {x: 100 + (scorenum11 * 10), y: barheightTotal * 11}, 2);
+			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 11}, 2);
+			FlxTween.tween(bar12, {x: 100, y: barheightTotal * 10}, 2);
+			FlxTween.tween(name12, {x: 100 + (scorenum12 * 10), y: barheightTotal * 10}, 2);
+			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 10}, 2);
+			FlxTween.tween(bar13, {x: 100, y: barheightTotal * 7}, 2);
+			FlxTween.tween(name13, {x: 100 + (scorenum13 * 10), y: barheightTotal * 7}, 2);
+			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 7}, 2);
+			FlxTween.tween(bar14, {x: 100, y: barheightTotal * 9}, 2);
+			FlxTween.tween(name14, {x: 100 + (scorenum14 * 10), y: barheightTotal * 9}, 2);
+			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 9}, 2);
+			FlxTween.tween(bar15, {x: 100, y: barheightTotal * 12}, 2);
+			FlxTween.tween(name15, {x: 100 + (scorenum15 * 10), y: barheightTotal * 12}, 2);
+			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 12}, 2);
+			FlxTween.tween(bar16, {x: 100, y: barheightTotal * 13}, 2);
+			FlxTween.tween(name16, {x: 100 + (scorenum16 * 10), y: barheightTotal * 13}, 2);
+			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 13}, 2);
 		});
 	}
 	private function updateValue1(value1:Float):Void
