@@ -103,7 +103,9 @@ class PlayState extends FlxState
 
 	// other stuff
 	var barheightTotal:Int = 45; // height of bar (720) divided by total one bar (change if number of athletes is not 16)
-	var eliminated = new FlxText();
+	var scaleMultiplier:Int = 10; // score multiplied by score mutiplier = bar (or some shit)
+
+	var eliminated = new FlxText(); // elimination text that pops up
 
 	override public function create()
 	{
@@ -292,7 +294,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer1:FlxTimer)
 		{
 			FlxTween.num(0, scorenum1, 5, {}, updateValue1);
-			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 0}, 5);
+			FlxTween.tween(score1, {x: 60 + (scorenum1 * scaleMultiplier), y: barheightTotal * 0}, 5);
 		});
 		add(score1);
 		// score seperator
@@ -301,7 +303,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer2:FlxTimer)
 		{
 			FlxTween.num(0, scorenum2, 5, {}, updateValue2);
-			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 1}, 5);
+			FlxTween.tween(score2, {x: 80 + (scorenum2 * scaleMultiplier), y: barheightTotal * 1}, 5);
 		});
 		add(score2);
 		// score seperator
@@ -310,7 +312,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer3:FlxTimer)
 		{
 			FlxTween.num(0, scorenum3, 5, {}, updateValue3);
-			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 2}, 5);
+			FlxTween.tween(score3, {x: 85 + (scorenum3 * scaleMultiplier), y: barheightTotal * 2}, 5);
 		});
 		add(score3);
 		// score seperator
@@ -319,7 +321,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer4:FlxTimer)
 		{
 			FlxTween.num(0, scorenum4, 5, {}, updateValue4);
-			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 3}, 5);
+			FlxTween.tween(score4, {x: 60 + (scorenum4 * scaleMultiplier), y: barheightTotal * 3}, 5);
 		});
 		add(score4);
 		// score seperator
@@ -328,7 +330,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer5:FlxTimer)
 		{
 			FlxTween.num(0, scorenum5, 5, {}, updateValue5);
-			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 4}, 5);
+			FlxTween.tween(score5, {x: 60 + (scorenum5 * scaleMultiplier), y: barheightTotal * 4}, 5);
 		});
 		add(score5);
 		// score seperator
@@ -337,7 +339,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer6:FlxTimer)
 		{
 			FlxTween.num(0, scorenum6, 5, {}, updateValue6);
-			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 5}, 5);
+			FlxTween.tween(score6, {x: 60 + (scorenum6 * scaleMultiplier), y: barheightTotal * 5}, 5);
 		});
 		add(score6);
 		// score seperator
@@ -346,7 +348,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer7:FlxTimer)
 		{
 			FlxTween.num(0, scorenum7, 5, {}, updateValue7);
-			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 6}, 5);
+			FlxTween.tween(score7, {x: 60 + (scorenum7 * scaleMultiplier), y: barheightTotal * 6}, 5);
 		});
 		add(score7);
 		// score seperator
@@ -355,7 +357,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer8:FlxTimer)
 		{
 			FlxTween.num(0, scorenum8, 5, {}, updateValue8);
-			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 7}, 5);
+			FlxTween.tween(score8, {x: 60 + (scorenum8 * scaleMultiplier), y: barheightTotal * 7}, 5);
 		});
 		add(score8);
 		// score seperator
@@ -364,7 +366,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer9:FlxTimer)
 		{
 			FlxTween.num(0, scorenum9, 5, {}, updateValue9);
-			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 8}, 5);
+			FlxTween.tween(score9, {x: 40 + (scorenum9 * scaleMultiplier), y: barheightTotal * 8}, 5);
 		});
 		add(score9);
 		// score seperator
@@ -373,7 +375,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer10:FlxTimer)
 		{
 			FlxTween.num(0, scorenum10, 5, {}, updateValue10);
-			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 9}, 5);
+			FlxTween.tween(score10, {x: 60 + (scorenum10 * scaleMultiplier), y: barheightTotal * 9}, 5);
 		});
 		add(score10);
 		// score seperator
@@ -382,7 +384,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer11:FlxTimer)
 		{
 			FlxTween.num(0, scorenum11, 5, {}, updateValue11);
-			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 10}, 5);
+			FlxTween.tween(score11, {x: 80 + (scorenum11 * scaleMultiplier), y: barheightTotal * 10}, 5);
 		});
 		add(score11);
 		// score seperator
@@ -391,7 +393,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer12:FlxTimer)
 		{
 			FlxTween.num(0, scorenum12, 5, {}, updateValue12);
-			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 11}, 5);
+			FlxTween.tween(score12, {x: 80 + (scorenum12 * scaleMultiplier), y: barheightTotal * 11}, 5);
 		});
 		add(score12);
 		// score seperator
@@ -400,7 +402,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer13:FlxTimer)
 		{
 			FlxTween.num(0, scorenum13, 5, {}, updateValue13);
-			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 12}, 5);
+			FlxTween.tween(score13, {x: 60 + (scorenum13 * scaleMultiplier), y: barheightTotal * 12}, 5);
 		});
 		add(score13);
 		// score seperator
@@ -409,7 +411,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer14:FlxTimer)
 		{
 			FlxTween.num(0, scorenum14, 5, {}, updateValue14);
-			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 13}, 5);
+			FlxTween.tween(score14, {x: 60 + (scorenum14 * scaleMultiplier), y: barheightTotal * 13}, 5);
 		});
 		add(score14);
 		// score seperator
@@ -418,7 +420,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer15:FlxTimer)
 		{
 			FlxTween.num(0, scorenum15, 5, {}, updateValue15);
-			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 14}, 5);
+			FlxTween.tween(score15, {x: 80 + (scorenum15 * scaleMultiplier), y: barheightTotal * 14}, 5);
 		});
 		add(score15);
 		// score seperator
@@ -427,7 +429,7 @@ class PlayState extends FlxState
 		new FlxTimer().start(3, function(scoreTimer16:FlxTimer)
 		{
 			FlxTween.num(0, scorenum16, 5, {}, updateValue16);
-			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 15}, 5);
+			FlxTween.tween(score16, {x: 80 + (scorenum16 * scaleMultiplier), y: barheightTotal * 15}, 5);
 		});
 		add(score16);
 		// score seperator
@@ -444,105 +446,105 @@ class PlayState extends FlxState
 		super.update(elapsed);
 		new FlxTimer().start(3, function(scoreTimer:FlxTimer)
 		{
-			FlxTween.tween(bar1.scale, {x: scorenum1 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar1.scale, {x: scorenum1 * scaleMultiplier, y: 1}, 2.5);
 			bar1.updateHitbox();
-			FlxTween.tween(bar2.scale, {x: scorenum2 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar2.scale, {x: scorenum2 * scaleMultiplier, y: 1}, 2.5);
 			bar2.updateHitbox();
-			FlxTween.tween(bar3.scale, {x: scorenum3 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar3.scale, {x: scorenum3 * scaleMultiplier, y: 1}, 2.5);
 			bar3.updateHitbox();
-			FlxTween.tween(bar4.scale, {x: scorenum4 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar4.scale, {x: scorenum4 * scaleMultiplier, y: 1}, 2.5);
 			bar4.updateHitbox();
-			FlxTween.tween(bar5.scale, {x: scorenum5 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar5.scale, {x: scorenum5 * scaleMultiplier, y: 1}, 2.5);
 			bar5.updateHitbox();
-			FlxTween.tween(bar6.scale, {x: scorenum6 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar6.scale, {x: scorenum6 * scaleMultiplier, y: 1}, 2.5);
 			bar6.updateHitbox();
-			FlxTween.tween(bar7.scale, {x: scorenum7 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar7.scale, {x: scorenum7 * scaleMultiplier, y: 1}, 2.5);
 			bar7.updateHitbox();
-			FlxTween.tween(bar8.scale, {x: scorenum8 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar8.scale, {x: scorenum8 * scaleMultiplier, y: 1}, 2.5);
 			bar8.updateHitbox();
-			FlxTween.tween(bar9.scale, {x: scorenum9 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar9.scale, {x: scorenum9 * scaleMultiplier, y: 1}, 2.5);
 			bar9.updateHitbox();
-			FlxTween.tween(bar10.scale, {x: scorenum10 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar10.scale, {x: scorenum10 * scaleMultiplier, y: 1}, 2.5);
 			bar10.updateHitbox();
-			FlxTween.tween(bar11.scale, {x: scorenum11 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar11.scale, {x: scorenum11 * scaleMultiplier, y: 1}, 2.5);
 			bar11.updateHitbox();
-			FlxTween.tween(bar12.scale, {x: scorenum12 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar12.scale, {x: scorenum12 * scaleMultiplier, y: 1}, 2.5);
 			bar12.updateHitbox();
-			FlxTween.tween(bar13.scale, {x: scorenum13 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar13.scale, {x: scorenum13 * scaleMultiplier, y: 1}, 2.5);
 			bar13.updateHitbox();
-			FlxTween.tween(bar14.scale, {x: scorenum14 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar14.scale, {x: scorenum14 * scaleMultiplier, y: 1}, 2.5);
 			bar14.updateHitbox();
-			FlxTween.tween(bar15.scale, {x: scorenum15 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar15.scale, {x: scorenum15 * scaleMultiplier, y: 1}, 2.5);
 			bar15.updateHitbox();
-			FlxTween.tween(bar16.scale, {x: scorenum16 * 10, y: 1}, 2.5);
+			FlxTween.tween(bar16.scale, {x: scorenum16 * scaleMultiplier, y: 1}, 2.5);
 			bar16.updateHitbox();
-			FlxTween.tween(name1, {x: 100 + (scorenum1 * 10), y: barheightTotal * 0}, 2.5);
-			FlxTween.tween(name2, {x: 100 + (scorenum2 * 10), y: barheightTotal * 1}, 2.5);
-			FlxTween.tween(name3, {x: 100 + (scorenum3 * 10), y: barheightTotal * 2}, 2.5);
-			FlxTween.tween(name4, {x: 100 + (scorenum4 * 10), y: barheightTotal * 3}, 2.5);
-			FlxTween.tween(name5, {x: 100 + (scorenum5 * 10), y: barheightTotal * 4}, 2.5);
-			FlxTween.tween(name6, {x: 100 + (scorenum6 * 10), y: barheightTotal * 5}, 2.5);
-			FlxTween.tween(name7, {x: 100 + (scorenum7 * 10), y: barheightTotal * 6}, 2.5);
-			FlxTween.tween(name8, {x: 100 + (scorenum8 * 10), y: barheightTotal * 7}, 2.5);
-			FlxTween.tween(name9, {x: 100 + (scorenum9 * 10), y: barheightTotal * 8}, 2.5);
-			FlxTween.tween(name10, {x: 100 + (scorenum10 * 10), y: barheightTotal * 9}, 2.5);
-			FlxTween.tween(name11, {x: 100 + (scorenum11 * 10), y: barheightTotal * 10}, 2.5);
-			FlxTween.tween(name12, {x: 100 + (scorenum12 * 10), y: barheightTotal * 11}, 2.5);
-			FlxTween.tween(name13, {x: 100 + (scorenum13 * 10), y: barheightTotal * 12}, 2.5);
-			FlxTween.tween(name14, {x: 100 + (scorenum14 * 10), y: barheightTotal * 13}, 2.5);
-			FlxTween.tween(name15, {x: 100 + (scorenum15 * 10), y: barheightTotal * 14}, 2.5);
-			FlxTween.tween(name16, {x: 100 + (scorenum16 * 10), y: barheightTotal * 15}, 2.5);
+			FlxTween.tween(name1, {x: 100 + (scorenum1 * scaleMultiplier), y: barheightTotal * 0}, 2.5);
+			FlxTween.tween(name2, {x: 100 + (scorenum2 * scaleMultiplier), y: barheightTotal * 1}, 2.5);
+			FlxTween.tween(name3, {x: 100 + (scorenum3 * scaleMultiplier), y: barheightTotal * 2}, 2.5);
+			FlxTween.tween(name4, {x: 100 + (scorenum4 * scaleMultiplier), y: barheightTotal * 3}, 2.5);
+			FlxTween.tween(name5, {x: 100 + (scorenum5 * scaleMultiplier), y: barheightTotal * 4}, 2.5);
+			FlxTween.tween(name6, {x: 100 + (scorenum6 * scaleMultiplier), y: barheightTotal * 5}, 2.5);
+			FlxTween.tween(name7, {x: 100 + (scorenum7 * scaleMultiplier), y: barheightTotal * 6}, 2.5);
+			FlxTween.tween(name8, {x: 100 + (scorenum8 * scaleMultiplier), y: barheightTotal * 7}, 2.5);
+			FlxTween.tween(name9, {x: 100 + (scorenum9 * scaleMultiplier), y: barheightTotal * 8}, 2.5);
+			FlxTween.tween(name10, {x: 100 + (scorenum10 * scaleMultiplier), y: barheightTotal * 9}, 2.5);
+			FlxTween.tween(name11, {x: 100 + (scorenum11 * scaleMultiplier), y: barheightTotal * 10}, 2.5);
+			FlxTween.tween(name12, {x: 100 + (scorenum12 * scaleMultiplier), y: barheightTotal * 11}, 2.5);
+			FlxTween.tween(name13, {x: 100 + (scorenum13 * scaleMultiplier), y: barheightTotal * 12}, 2.5);
+			FlxTween.tween(name14, {x: 100 + (scorenum14 * scaleMultiplier), y: barheightTotal * 13}, 2.5);
+			FlxTween.tween(name15, {x: 100 + (scorenum15 * scaleMultiplier), y: barheightTotal * 14}, 2.5);
+			FlxTween.tween(name16, {x: 100 + (scorenum16 * scaleMultiplier), y: barheightTotal * 15}, 2.5);
 		});
 		new FlxTimer().start(8.5, function(placementTimer:FlxTimer)
 		{
 			FlxTween.tween(bar1, {x: 100, y: barheightTotal * 8}, 2);
-			FlxTween.tween(name1, {x: 100 + (scorenum1 * 10), y: barheightTotal * 8}, 2);
-			FlxTween.tween(score1, {x: 60 + (scorenum1 * 10), y: barheightTotal * 8}, 2);
+			FlxTween.tween(name1, {x: 100 + (scorenum1 * scaleMultiplier), y: barheightTotal * 8}, 2);
+			FlxTween.tween(score1, {x: 60 + (scorenum1 * scaleMultiplier), y: barheightTotal * 8}, 2);
 			FlxTween.tween(bar2, {x: 100, y: barheightTotal * 14}, 2);
-			FlxTween.tween(name2, {x: 100 + (scorenum2 * 10), y: barheightTotal * 14}, 2);
-			FlxTween.tween(score2, {x: 80 + (scorenum2 * 10), y: barheightTotal * 14}, 2);
+			FlxTween.tween(name2, {x: 100 + (scorenum2 * scaleMultiplier), y: barheightTotal * 14}, 2);
+			FlxTween.tween(score2, {x: 80 + (scorenum2 * scaleMultiplier), y: barheightTotal * 14}, 2);
 			FlxTween.tween(bar3, {x: 100, y: barheightTotal * 15}, 2);
-			FlxTween.tween(name3, {x: 100 + (scorenum3 * 10), y: barheightTotal * 15}, 2);
-			FlxTween.tween(score3, {x: 85 + (scorenum3 * 10), y: barheightTotal * 15}, 2);
+			FlxTween.tween(name3, {x: 100 + (scorenum3 * scaleMultiplier), y: barheightTotal * 15}, 2);
+			FlxTween.tween(score3, {x: 85 + (scorenum3 * scaleMultiplier), y: barheightTotal * 15}, 2);
 			FlxTween.tween(bar4, {x: 100, y: barheightTotal * 1}, 2);
-			FlxTween.tween(name4, {x: 100 + (scorenum4 * 10), y: barheightTotal * 1}, 2);
-			FlxTween.tween(score4, {x: 60 + (scorenum4 * 10), y: barheightTotal * 1}, 2);
+			FlxTween.tween(name4, {x: 100 + (scorenum4 * scaleMultiplier), y: barheightTotal * 1}, 2);
+			FlxTween.tween(score4, {x: 60 + (scorenum4 * scaleMultiplier), y: barheightTotal * 1}, 2);
 			FlxTween.tween(bar5, {x: 100, y: barheightTotal * 3}, 2);
-			FlxTween.tween(name5, {x: 100 + (scorenum5 * 10), y: barheightTotal * 3}, 2);
-			FlxTween.tween(score5, {x: 60 + (scorenum5 * 10), y: barheightTotal * 3}, 2);
+			FlxTween.tween(name5, {x: 100 + (scorenum5 * scaleMultiplier), y: barheightTotal * 3}, 2);
+			FlxTween.tween(score5, {x: 60 + (scorenum5 * scaleMultiplier), y: barheightTotal * 3}, 2);
 			FlxTween.tween(bar6, {x: 100, y: barheightTotal * 6}, 2);
-			FlxTween.tween(name6, {x: 100 + (scorenum6 * 10), y: barheightTotal * 6}, 2);
-			FlxTween.tween(score6, {x: 60 + (scorenum6 * 10), y: barheightTotal * 6}, 2);
+			FlxTween.tween(name6, {x: 100 + (scorenum6 * scaleMultiplier), y: barheightTotal * 6}, 2);
+			FlxTween.tween(score6, {x: 60 + (scorenum6 * scaleMultiplier), y: barheightTotal * 6}, 2);
 			FlxTween.tween(bar7, {x: 100, y: barheightTotal * 5}, 2);
-			FlxTween.tween(name7, {x: 100 + (scorenum7 * 10), y: barheightTotal * 5}, 2);
-			FlxTween.tween(score7, {x: 60 + (scorenum7 * 10), y: barheightTotal * 5}, 2);
+			FlxTween.tween(name7, {x: 100 + (scorenum7 * scaleMultiplier), y: barheightTotal * 5}, 2);
+			FlxTween.tween(score7, {x: 60 + (scorenum7 * scaleMultiplier), y: barheightTotal * 5}, 2);
 			FlxTween.tween(bar8, {x: 100, y: barheightTotal * 4}, 2);
-			FlxTween.tween(name8, {x: 100 + (scorenum8 * 10), y: barheightTotal * 4}, 2);
-			FlxTween.tween(score8, {x: 60 + (scorenum8 * 10), y: barheightTotal * 4}, 2);
+			FlxTween.tween(name8, {x: 100 + (scorenum8 * scaleMultiplier), y: barheightTotal * 4}, 2);
+			FlxTween.tween(score8, {x: 60 + (scorenum8 * scaleMultiplier), y: barheightTotal * 4}, 2);
 			FlxTween.tween(bar9, {x: 100, y: barheightTotal * 0}, 2);
-			FlxTween.tween(name9, {x: 100 + (scorenum9 * 10), y: barheightTotal * 0}, 2);
-			FlxTween.tween(score9, {x: 40 + (scorenum9 * 10), y: barheightTotal * 0}, 2);
+			FlxTween.tween(name9, {x: 100 + (scorenum9 * scaleMultiplier), y: barheightTotal * 0}, 2);
+			FlxTween.tween(score9, {x: 40 + (scorenum9 * scaleMultiplier), y: barheightTotal * 0}, 2);
 			FlxTween.tween(bar10, {x: 100, y: barheightTotal * 2}, 2);
-			FlxTween.tween(name10, {x: 100 + (scorenum10 * 10), y: barheightTotal * 2}, 2);
-			FlxTween.tween(score10, {x: 60 + (scorenum10 * 10), y: barheightTotal * 2}, 2);
+			FlxTween.tween(name10, {x: 100 + (scorenum10 * scaleMultiplier), y: barheightTotal * 2}, 2);
+			FlxTween.tween(score10, {x: 60 + (scorenum10 * scaleMultiplier), y: barheightTotal * 2}, 2);
 			FlxTween.tween(bar11, {x: 100, y: barheightTotal * 11}, 2);
-			FlxTween.tween(name11, {x: 100 + (scorenum11 * 10), y: barheightTotal * 11}, 2);
-			FlxTween.tween(score11, {x: 80 + (scorenum11 * 10), y: barheightTotal * 11}, 2);
+			FlxTween.tween(name11, {x: 100 + (scorenum11 * scaleMultiplier), y: barheightTotal * 11}, 2);
+			FlxTween.tween(score11, {x: 80 + (scorenum11 * scaleMultiplier), y: barheightTotal * 11}, 2);
 			FlxTween.tween(bar12, {x: 100, y: barheightTotal * 10}, 2);
-			FlxTween.tween(name12, {x: 100 + (scorenum12 * 10), y: barheightTotal * 10}, 2);
-			FlxTween.tween(score12, {x: 80 + (scorenum12 * 10), y: barheightTotal * 10}, 2);
+			FlxTween.tween(name12, {x: 100 + (scorenum12 * scaleMultiplier), y: barheightTotal * 10}, 2);
+			FlxTween.tween(score12, {x: 80 + (scorenum12 * scaleMultiplier), y: barheightTotal * 10}, 2);
 			FlxTween.tween(bar13, {x: 100, y: barheightTotal * 7}, 2);
-			FlxTween.tween(name13, {x: 100 + (scorenum13 * 10), y: barheightTotal * 7}, 2);
-			FlxTween.tween(score13, {x: 60 + (scorenum13 * 10), y: barheightTotal * 7}, 2);
+			FlxTween.tween(name13, {x: 100 + (scorenum13 * scaleMultiplier), y: barheightTotal * 7}, 2);
+			FlxTween.tween(score13, {x: 60 + (scorenum13 * scaleMultiplier), y: barheightTotal * 7}, 2);
 			FlxTween.tween(bar14, {x: 100, y: barheightTotal * 9}, 2);
-			FlxTween.tween(name14, {x: 100 + (scorenum14 * 10), y: barheightTotal * 9}, 2);
-			FlxTween.tween(score14, {x: 60 + (scorenum14 * 10), y: barheightTotal * 9}, 2);
+			FlxTween.tween(name14, {x: 100 + (scorenum14 * scaleMultiplier), y: barheightTotal * 9}, 2);
+			FlxTween.tween(score14, {x: 60 + (scorenum14 * scaleMultiplier), y: barheightTotal * 9}, 2);
 			FlxTween.tween(bar15, {x: 100, y: barheightTotal * 12}, 2);
-			FlxTween.tween(name15, {x: 100 + (scorenum15 * 10), y: barheightTotal * 12}, 2);
-			FlxTween.tween(score15, {x: 80 + (scorenum15 * 10), y: barheightTotal * 12}, 2);
+			FlxTween.tween(name15, {x: 100 + (scorenum15 * scaleMultiplier), y: barheightTotal * 12}, 2);
+			FlxTween.tween(score15, {x: 80 + (scorenum15 * scaleMultiplier), y: barheightTotal * 12}, 2);
 			FlxTween.tween(bar16, {x: 100, y: barheightTotal * 13}, 2);
-			FlxTween.tween(name16, {x: 100 + (scorenum16 * 10), y: barheightTotal * 13}, 2);
-			FlxTween.tween(score16, {x: 80 + (scorenum16 * 10), y: barheightTotal * 13}, 2);
+			FlxTween.tween(name16, {x: 100 + (scorenum16 * scaleMultiplier), y: barheightTotal * 13}, 2);
+			FlxTween.tween(score16, {x: 80 + (scorenum16 * scaleMultiplier), y: barheightTotal * 13}, 2);
 		});
 	}
 	private function updateValue1(value1:Float):Void
