@@ -65,7 +65,7 @@ class PlayState extends FlxState
 	var score15 = new FlxText();
 	var score16 = new FlxText();
 
-	// make sure to multiply by ten when scaling
+	// will multiply by scale multiplier when scaling
 	var scorenum1:Int = 12;
 	var scorenum2:Int = 2;
 	var scorenum3:Int = 1;
