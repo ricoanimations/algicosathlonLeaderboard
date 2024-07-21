@@ -102,6 +102,7 @@ class PlayState extends FlxState
 	var name16 = new FlxText();
 
 	// other stuff
+	var barheight:Int = 40; // bar height (thats all)
 	var barheightTotal:Int = 45; // height of bar (720) divided by total one bar (change if number of athletes is not 16)
 	var scaleMultiplier:Int = 10; // score multiplied by score mutiplier = bar (or some shit)
 
@@ -114,52 +115,52 @@ class PlayState extends FlxState
 		barPlacement = new FlxSprite(0, 0).makeGraphic(100, 720, FlxColor.GRAY);
 		add(barPlacement);
 
-		bar1 = new FlxSprite(100, barheightTotal * 0).makeGraphic(1, 40, FlxColor.MAGENTA);
+		bar1 = new FlxSprite(100, barheightTotal * 0).makeGraphic(1, barheight, FlxColor.MAGENTA);
 		add(bar1);
 
-		bar2 = new FlxSprite(100, barheightTotal * 1).makeGraphic(1, 40, FlxColor.PURPLE);
+		bar2 = new FlxSprite(100, barheightTotal * 1).makeGraphic(1, barheight, FlxColor.PURPLE);
 		add(bar2);
 
-		bar3 = new FlxSprite(100, barheightTotal * 2).makeGraphic(1, 40, 0xFFD2B48C);
+		bar3 = new FlxSprite(100, barheightTotal * 2).makeGraphic(1, barheight, 0xFFD2B48C);
 		add(bar3);
 
-		bar4 = new FlxSprite(100, barheightTotal * 3).makeGraphic(1, 40, FlxColor.ORANGE);
+		bar4 = new FlxSprite(100, barheightTotal * 3).makeGraphic(1, barheight, FlxColor.ORANGE);
 		add(bar4);
 
-		bar5 = new FlxSprite(100, barheightTotal * 4).makeGraphic(1, 40, FlxColor.LIME);
+		bar5 = new FlxSprite(100, barheightTotal * 4).makeGraphic(1, barheight, FlxColor.LIME);
 		add(bar5);
 
-		bar6 = new FlxSprite(100, barheightTotal * 5).makeGraphic(1, 40, FlxColor.RED);
+		bar6 = new FlxSprite(100, barheightTotal * 5).makeGraphic(1, barheight, FlxColor.RED);
 		add(bar6);
 
-		bar7 = new FlxSprite(100, barheightTotal * 6).makeGraphic(1, 40, FlxColor.BLUE);
+		bar7 = new FlxSprite(100, barheightTotal * 6).makeGraphic(1, barheight, FlxColor.BLUE);
 		add(bar7);
 
-		bar8 = new FlxSprite(100, barheightTotal * 7).makeGraphic(1, 40, 0xFFC080FF);
+		bar8 = new FlxSprite(100, barheightTotal * 7).makeGraphic(1, barheight, 0xFFC080FF);
 		add(bar8);
 
-		bar9 = new FlxSprite(100, barheightTotal * 8).makeGraphic(1, 40, FlxColor.YELLOW);
+		bar9 = new FlxSprite(100, barheightTotal * 8).makeGraphic(1, barheight, FlxColor.YELLOW);
 		add(bar9);
 
-		bar10 = new FlxSprite(100, barheightTotal * 9).makeGraphic(1, 40, FlxColor.BROWN);
+		bar10 = new FlxSprite(100, barheightTotal * 9).makeGraphic(1, barheight, FlxColor.BROWN);
 		add(bar10);
 
-		bar11 = new FlxSprite(100, barheightTotal * 10).makeGraphic(1, 40, 0xFF646464);
+		bar11 = new FlxSprite(100, barheightTotal * 10).makeGraphic(1, barheight, 0xFF646464);
 		add(bar11);
 
-		bar12 = new FlxSprite(100, barheightTotal * 11).makeGraphic(1, 40, 0xFF000080);
+		bar12 = new FlxSprite(100, barheightTotal * 11).makeGraphic(1, barheight, 0xFF000080);
 		add(bar12);
 
-		bar13 = new FlxSprite(100, barheightTotal * 12).makeGraphic(1, 40, 0xFF808000);
+		bar13 = new FlxSprite(100, barheightTotal * 12).makeGraphic(1, barheight, 0xFF808000);
 		add(bar13);
 
-		bar14 = new FlxSprite(100, barheightTotal * 13).makeGraphic(1, 40, 0xFFFF80FF);
+		bar14 = new FlxSprite(100, barheightTotal * 13).makeGraphic(1, barheight, 0xFFFF80FF);
 		add(bar14);
 
-		bar15 = new FlxSprite(100, barheightTotal * 14).makeGraphic(1, 40, 0xFF00FFFF);
+		bar15 = new FlxSprite(100, barheightTotal * 14).makeGraphic(1, barheight, 0xFF00FFFF);
 		add(bar15);
 
-		bar16 = new FlxSprite(100, barheightTotal * 15).makeGraphic(1, 40, 0xFF006400);
+		bar16 = new FlxSprite(100, barheightTotal * 15).makeGraphic(1, barheight, 0xFF006400);
 		add(bar16);
 		barPlacementText1 = new FlxText(25, barheightTotal * 0, 0, '1st', 32);
 		barPlacementText1.setFormat("Times New Roman", 32);
