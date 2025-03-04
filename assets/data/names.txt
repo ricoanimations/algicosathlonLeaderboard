@@ -1,0 +1,16 @@
+Magenta
+Purple
+Tan
+Orange
+Lime
+Red
+Blue
+Lavender
+Yellow
+Brown
+Gray
+Navy
+Olive
+Pink
+Cyan
+Green
